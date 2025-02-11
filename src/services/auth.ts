@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://localhost',
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
@@ -20,7 +20,7 @@ api.interceptors.request.use((config) => {
 // Add request interceptor to handle CSRF token
 api.interceptors.request.use(async (config) => {
   // Get CSRF cookie before making authenticated requests
-  await axios.get('http://localhost/sanctum/csrf-cookie', { withCredentials: true })
+  await axios.get(`${import.meta.env.VITE_API_URL}/sanctum/csrf-cookie`, { withCredentials: true })
   return config
 })
 
