@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # tkambio-frontend-challenge-
-=======
 
 ## Frontend Setup
 
@@ -18,4 +16,3 @@ npm install
 ```bash
 npm run dev
 ```
->>>>>>> edbd360 (chore: solve challege)
